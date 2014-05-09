@@ -1,0 +1,73 @@
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="../WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="conteudo">
+
+        <h:form>
+
+            <h:dataTable value="#{funcionarioBean.funcionarios}"
+                         var="funcionario"
+                         styleClass="tabela"
+                         headerClass="cabecalho"
+                         cellpadding="10">
+                <f:facet name="header">
+                    <h:outputText value="Funcionarios"/>
+                </f:facet>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Nome"/>
+                    </f:facet>
+                    <h:outputText value="#{funcionario.nome}"/>    
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="CPF"/>
+                    </f:facet>
+                    <h:outputText value="#{funcionario.cpf}"/>    
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Data de Nascimento"/>
+                    </f:facet>
+                    <h:outputText value="#{funcionario.dataNascimento}">
+                        <f:convertDateTime pattern="dd/MM/yyyy"/>
+                    </h:outputText>
+
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Cargo"/>
+                    </f:facet>
+                    <h:outputText value="#{funcionario.cargo}"/>         
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:commandLink action="/faces/paginas/funcionario.xhtml">
+                            <h:graphicImage library="img" name="add.png"/>
+                        </h:commandLink>
+                    </f:facet>
+
+                    <h:commandLink action="#{funcionarioBean.preparaAlteracao}">
+                        <f:setPropertyActionListener value="#{funcionario}"
+                                                     target="#{funcionarioBean.funcionario}"/>
+                        <h:graphicImage library="img" name="edit.png"/>
+                    </h:commandLink>
+
+                    <h:commandLink action="#{funcionarioBean.remove}">
+                        <f:setPropertyActionListener value="#{funcionario}"
+                                                     target="#{funcionarioBean.funcionario}"/>
+                        <h:graphicImage library="img" name="delete.png"/>
+                    </h:commandLink>
+                </h:column>
+
+            </h:dataTable>
+        </h:form>
+    </ui:define>
+</ui:composition>

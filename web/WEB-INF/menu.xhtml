@@ -1,0 +1,25 @@
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html">
+    <h:form>
+
+        <ul>
+            <li>
+                <h2>Cadastros</h2>
+                <ul>
+                    <li><h:commandLink value="Cargo" action="/faces/paginas/cargo.xhtml"/></li>
+                    <li><h:commandLink value="Funcionário" action="/faces/paginas/funcionario.xhtml"/></li>
+                </ul>
+            </li>
+
+            <li>    
+                <h2>Listagens</h2>
+                <ul>
+                    <li><h:commandLink value="Cargos" action="/faces/paginas/cargos.xhtml"/></li>
+                    <li><h:commandLink value="Funcionários" action="/faces/paginas/funcionarios.xhtml"/></li>
+                </ul>
+            </li>
+        </ul>
+
+    </h:form>
+</ui:composition>
