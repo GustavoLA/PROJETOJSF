@@ -21,17 +21,16 @@ import javax.servlet.annotation.WebFilter;
  * @author rosicleia.souza
  */
 @WebFilter(servletNames = "Faces Servlet")
-public class JPAFilter  implements Filter{
+public class JPAFilter implements Filter {
 
     //Classe que descobre quem cria as conexões
     private EntityManagerFactory factory;
-    
+
     //Método executado quando o filtro é carregado pelo container
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         //Cria uma fábrica de conexão
-        this.factory = Persistence.createEntityManagerFactory
-                ("ExemploJSFBancoPU");
+        this.factory = Persistence.createEntityManagerFactory("ProjetoJPA");
     }
 
     //Método executado a cada requisição
@@ -46,23 +45,22 @@ public class JPAFilter  implements Filter{
         //Executa o próximo filtro ou indica que é o último 
         //filtro para o container
         chain.doFilter(request, response);
-        try{
+        try {
             //Efetiva a transação
             manager.getTransaction().commit();
-        }catch(Exception e){
+        } catch (Exception e) {
             //Desfaz a transação
             manager.getTransaction().rollback();
-        }finally{
+        } finally {
             //Fecha a transação 
             manager.close();
         }
-        
-    
+
+
     }
 
     @Override
     public void destroy() {
         this.factory.close();
     }
-    
 }
