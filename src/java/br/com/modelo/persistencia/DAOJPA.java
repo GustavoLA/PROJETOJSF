@@ -1,4 +1,3 @@
-
 package br.com.modelo.persistencia;
 
 import br.com.modelo.persistencia.dao.DAO;
@@ -8,14 +7,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
-public class DAOJPA <T, I extends Serializable> implements DAO<T, I>{
-    
+public class DAOJPA<T, I extends Serializable> implements DAO<T, I> {
+
     private EntityManager manager;
 
     public DAOJPA(EntityManager manager) {
         this.manager = manager;
     }
-    
+
     @Override
     public void salvar(T entity) {
         this.manager.merge(entity);
@@ -29,18 +28,16 @@ public class DAOJPA <T, I extends Serializable> implements DAO<T, I>{
 
     @Override
     public T buscarPorId(Class<T> classe, I pk) {
-        try{
+        try {
             return this.manager.find(classe, pk);
-        }catch(NoResultException e){
-            return null;           
+        } catch (NoResultException e) {
+            return null;
         }
     }
 
     @Override
     public List<T> buscarTodos(Class<T> classe) {
-       Query q = this.manager.createQuery
-               ("select x from " + classe.getSimpleName() + " x");
-       return q.getResultList();
+        Query q = this.manager.createQuery("select x from " + classe.getSimpleName() + " x");
+        return q.getResultList();
     }
-    
 }

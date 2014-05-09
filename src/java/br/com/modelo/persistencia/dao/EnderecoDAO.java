@@ -8,3 +8,4 @@ public interface EnderecoDAO extends
         DAO<Endereco, Integer> {
     
 }
+

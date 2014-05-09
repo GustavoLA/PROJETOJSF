@@ -1,8 +1,8 @@
 package br.com.controller;
 
 import br.com.modelo.Autor;
-import br.com.modelo.persistencia.CargoDAOJPA;
-import br.com.modelo.persistencia.dao.CargoDAO;
+import br.com.modelo.persistencia.AutorDAOJPA;
+import br.com.modelo.persistencia.dao.AutorDAO;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.ExternalContext;
@@ -12,35 +12,35 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 @ManagedBean
-public class CargoBean {
+public class AutorBean {
 
-    private Autor cargo;
-    private List<Autor> cargos;
+    private Autor autor;
+    private List<Autor> autores;
 
-    public CargoBean() {
-        cargo = new Autor();
+    public AutorBean() {
+        autor = new Autor();
     }
 
     public String insere() {
         EntityManager manager = this.getManager();
-        CargoDAO dao = new CargoDAOJPA(manager);
-        dao.salvar(cargo);
-        this.cargos = null;
-        return "/paginas/cargos.xhtml";
+        AutorDAO dao = new AutorDAOJPA(manager);
+        dao.salvar(autor);
+        this.autores = null;
+        return "/paginas/autores.xhtml";
     }
 
     public String preparaAlteracao() {
         EntityManager manager = this.getManager();
-        CargoDAO dao = new CargoDAOJPA(manager);
-        this.cargo = dao.buscarPorId(Autor.class, cargo.getCodigo());
-        return "/paginas/cargo.xhtml";
+        AutorDAO dao = new AutorDAOJPA(manager);
+        this.autor = dao.buscarPorId(Autor.class, autor.getCodigo());
+        return "/paginas/autor.xhtml";
     }
 
     public void remove() {
         EntityManager manager = this.getManager();
-        CargoDAO dao = new CargoDAOJPA(manager);
-        dao.remover(Autor.class, cargo.getCodigo());
-        this.cargos = null;
+        AutorDAO dao = new AutorDAOJPA(manager);
+        dao.remover(Autor.class, autor.getCodigo());
+        this.autores = null;
     }
 
     private EntityManager getManager() {
@@ -50,20 +50,20 @@ public class CargoBean {
         return (EntityManager) request.getAttribute("EntityManager");
     }
 
-    public Autor getCargo() {
-        return cargo;
+    public Autor getAutor() {
+        return autor;
     }
 
-    public void setCargo(Autor cargo) {
-        this.cargo = cargo;
+    public void setAutor(Autor autor) {
+        this.autor = autor;
     }
 
-    public List<Autor> getCargos() {
-        if (this.cargos == null) {
+    public List<Autor> getAutores() {
+        if (this.autores == null) {
             EntityManager manager = this.getManager();
-            CargoDAO dao = new CargoDAOJPA(manager);
-            this.cargos = dao.buscarTodos(Autor.class);
+            AutorDAO dao = new AutorDAOJPA(manager);
+            this.autores = dao.buscarTodos(Autor.class);
         }
-        return cargos;
+        return autores;
     }
 }

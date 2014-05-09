@@ -10,3 +10,4 @@ public interface DAO <T, I extends Serializable>{
     T buscarPorId(Class<T> classe, I pk);
     List<T> buscarTodos (Class<T> classe);
 }
+
