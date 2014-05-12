@@ -1,0 +1,46 @@
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="../WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="conteudo">
+        <h:form>
+            <h:inputHidden value="#{livroBean.livro.codigo}"/>
+
+            <fieldset>
+                <h:panelGrid columns="3">
+                    <h:outputLabel for="nome" value="Nome: "/>
+                    <h:inputText id="nome" value="#{livroBean.livro.nome}"
+                                 required="true"
+                                 requiredMessage="O campo nome deve ser 
+                                 preenchido"/>
+                    <h:message for="nome" errorStyle="color:red; display:block"/>
+
+                    <h:outputLabel for="autor" value="Autor: "/>
+                    <h:inputText id="autor" 
+                                 value="#{livroBean.livro.autor}"
+                                 required="true"
+                                 requiredMessage="É necessário informar o autor do livro."/>
+                    <h:message for="cpf" errorStyle="color:red; display:block"/>
+
+                    <h:outputLabel for="editora" value="Editora: "/>
+                    <h:inputText id="editora" 
+                                 value="#{livroBean.livro.editora}"
+                                 required="true"
+                                 requiredMessage="É necessário informar a editora."/>
+                    <h:message for="editora" errorStyle="color:red; display:block"/>
+                </h:panelGrid>
+            </fieldset>
+
+            <h:panelGroup>
+                <h:commandButton value="Limpar"
+                                 type="reset"
+                                 styleClass="botao"/>
+                <h:commandButton value="Salvar"
+                                 action="#{livroBean.insere}"
+                                 styleClass="botao"/>    
+            </h:panelGroup>
+        </h:form>
+    </ui:define>
+</ui:composition>

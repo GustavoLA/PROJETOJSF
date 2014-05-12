@@ -5,28 +5,27 @@
 
     <ui:define name="conteudo">
         <h:form>
-            <h:inputHidden value="#{cargoBean.cargo.codigo}"/>
+            <h:inputHidden value="#{autorBean.autor.codigo}"/>
             <fieldset>
+
                 <h:panelGrid columns="3">
+
                     <h:outputLabel for="nome" value="Nome: "/>
-                    <h:inputText id="nome" value="#{cargoBean.cargo.nome}"
+                    <h:inputText id="nome" value="#{autorBean.autor.nome}"
                                  required="true"
                                  requiredMessage="O campo nome deve ser 
                                  preenchido"/>
                     <h:message for="nome" errorStyle="color:red; display:block"/>
-                    
-                    <h:outputLabel for="idade" value="Idade: "/>
-                    <h:inputText id="idade" value="#{cargoBean.cargo.idade}"
-                                 required="true"
-                                 requiredMessage="O campo idade deve ser 
-                                 preenchido"/>
-                    <h:message for="idade" errorStyle="color:red; display:block"/>
 
-                    <h:outputLabel for="descricao" value="Descrição: "/>
-                    <h:inputTextarea id="descricao" 
-                                     value="#{cargoBean.cargo.descricao}"
-                                     cols="50" rows="10"/>
-                    <h:message for="descricao" errorStyle="color:red; display:block"/>
+
+                    <h:outputLabel for="sobre" value="Sobre: "/>
+                    <h:inputTextarea id="sobre" 
+                                     value="#{autorBean.autor.sobre}"
+                                     cols="50" rows="10" 
+                                     required="true" 
+                                     requiredMessage="O campo Sobre deve ser preenchido"/>
+                    <h:message for="sobre" errorStyle="color:red; display:block"/>
+
 
                 </h:panelGrid>
             </fieldset>
@@ -36,7 +35,7 @@
                                  type="reset"
                                  styleClass="botao"/>
                 <h:commandButton value="Salvar"
-                                 action="#{cargoBean.insere}"
+                                 action="#{autorBean.insere}"
                                  styleClass="botao"/>    
             </h:panelGroup>
         </h:form>
