@@ -5,7 +5,6 @@
 package br.com.modelo.persistencia.dao;
 
 import br.com.modelo.Editora;
-import java.io.Serializable;
 
 /**
  *

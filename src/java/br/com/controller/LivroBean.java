@@ -1,10 +1,13 @@
 package br.com.controller;
 
 import br.com.modelo.Autor;
+import br.com.modelo.Editora;
 import br.com.modelo.Livro;
 import br.com.modelo.persistencia.AutorDAOJPA;
+import br.com.modelo.persistencia.EditoraDAOJPA;
 import br.com.modelo.persistencia.LivroDAOJPA;
 import br.com.modelo.persistencia.dao.AutorDAO;
+import br.com.modelo.persistencia.dao.EditoraDAO;
 import br.com.modelo.persistencia.dao.LivroDAO;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
@@ -19,6 +22,7 @@ public class LivroBean {
     private Livro livro;
     private List<Livro> livros;
     private int autorId;
+    private int editoraId;
 
     public LivroBean() {
         livro = new Livro();
@@ -27,11 +31,20 @@ public class LivroBean {
     public String insere() {
         EntityManager manager = this.getManager();
         AutorDAO autorDao = new AutorDAOJPA(manager);
-
+        EditoraDAO editoraDao = new EditoraDAOJPA(manager);
+        
+        if (editoraId != 0) {
+            Editora editora = editoraDao.buscarPorId(Editora.class, editoraId);
+            this.livro.setEditora(editora);
+        }
+        
         if (autorId != 0) {
             Autor autor = autorDao.buscarPorId(Autor.class, autorId);
             this.livro.setAutor(autor);
         }
+
+
+
         LivroDAO dao = new LivroDAOJPA(manager);
         dao.salvar(livro);
         this.livros = null;
@@ -67,12 +80,20 @@ public class LivroBean {
         this.livro = livro;
     }
 
-    public int getLivroId() {
+    public int getAutorId() {
         return autorId;
     }
 
-    public void setLivroId(int autorId) {
+    public void setAutorId(int autorId) {
         this.autorId = autorId;
+    }
+
+    public int getEditoraId() {
+        return editoraId;
+    }
+
+    public void setEditoraId(int editoraId) {
+        this.editoraId = editoraId;
     }
 
     public List<Livro> getLivros() {

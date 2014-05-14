@@ -7,62 +7,45 @@
 
         <h:form>
 
-            <h:dataTable value="#{funcionarioBean.funcionarios}"
-                         var="funcionario"
+            <h:dataTable value="#{livroBean.livros}"
+                         var="livro"
                          styleClass="tabela"
                          headerClass="cabecalho"
                          cellpadding="10">
                 <f:facet name="header">
-                    <h:outputText value="Funcionarios"/>
+                    <h:outputText value="Livros"/>
                 </f:facet>
 
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="Nome"/>
                     </f:facet>
-                    <h:outputText value="#{funcionario.nome}"/>    
+                    <h:outputText value="#{livro.nome}"/>    
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="CPF"/>
+                        <h:outputText value="Autor"/>
                     </f:facet>
-                    <h:outputText value="#{funcionario.cpf}"/>    
+                    <h:outputText value="#{livro.autor}"/>    
                 </h:column>
 
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Data de Nascimento"/>
-                    </f:facet>
-                    <h:outputText value="#{funcionario.dataNascimento}">
-                        <f:convertDateTime pattern="dd/MM/yyyy"/>
-                    </h:outputText>
-
-                </h:column>
+                <f:facet name="header">
+                    <h:commandLink action="/faces/paginas/livro.xhtml">
+                        <h:graphicImage library="img" name="add.png"/>
+                    </h:commandLink>
+                </f:facet>
 
                 <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Cargo"/>
-                    </f:facet>
-                    <h:outputText value="#{funcionario.cargo}"/>         
-                </h:column>
-
-                <h:column>
-                    <f:facet name="header">
-                        <h:commandLink action="/faces/paginas/funcionario.xhtml">
-                            <h:graphicImage library="img" name="add.png"/>
-                        </h:commandLink>
-                    </f:facet>
-
-                    <h:commandLink action="#{funcionarioBean.preparaAlteracao}">
-                        <f:setPropertyActionListener value="#{funcionario}"
-                                                     target="#{funcionarioBean.funcionario}"/>
+                    <h:commandLink action="#{livroBean.preparaAlteracao}">
+                        <f:setPropertyActionListener value="#{livro}"
+                                                     target="#{livroBean.livro}"/>
                         <h:graphicImage library="img" name="edit.png"/>
                     </h:commandLink>
 
-                    <h:commandLink action="#{funcionarioBean.remove}">
-                        <f:setPropertyActionListener value="#{funcionario}"
-                                                     target="#{funcionarioBean.funcionario}"/>
+                    <h:commandLink action="#{livroBean.remove}">
+                        <f:setPropertyActionListener value="#{livro}"
+                                                     target="#{livroBean.livro}"/>
                         <h:graphicImage library="img" name="delete.png"/>
                     </h:commandLink>
                 </h:column>

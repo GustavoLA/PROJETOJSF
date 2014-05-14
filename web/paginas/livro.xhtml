@@ -18,18 +18,23 @@
                     <h:message for="nome" errorStyle="color:red; display:block"/>
 
                     <h:outputLabel for="autor" value="Autor: "/>
-                    <h:inputText id="autor" 
-                                 value="#{livroBean.livro.autor}"
-                                 required="true"
-                                 requiredMessage="É necessário informar o autor do livro."/>
-                    <h:message for="cpf" errorStyle="color:red; display:block"/>
+                    <h:selectOneMenu id="autor" 
+                                     value="#{livroBean.autorId}">
+                        <f:selectItems value="#{autorBean.autores}" var="autor"
+                                       itemLabel="#{autor.nome} #{autor.sobrenome}"
+                                       itemValue="#{autor.codigo}"/>
+                    </h:selectOneMenu>         
+                    <h:message for="autor"/>
 
-                    <h:outputLabel for="editora" value="Editora: "/>
-                    <h:inputText id="editora" 
-                                 value="#{livroBean.livro.editora}"
-                                 required="true"
-                                 requiredMessage="É necessário informar a editora."/>
-                    <h:message for="editora" errorStyle="color:red; display:block"/>
+<!--                    <h:outputLabel for="editora" value="Editora: "/>
+                    <h:selectOneMenu id="editora" 
+                                     value="#{livroBean.editoraId}">
+                        <f:selectItems value="#{editoraBean}" var="editora"
+                                       itemLabel="#{editora.nome}"
+                                       itemValue="#{editora.codigo}"/>
+                    </h:selectOneMenu>         
+                    <h:message for="editor"/>-->
+
                 </h:panelGrid>
             </fieldset>
 

@@ -8,6 +8,7 @@ import br.com.modelo.Editora;
 import br.com.modelo.persistencia.EditoraDAOJPA;
 import br.com.modelo.persistencia.dao.EditoraDAO;
 import java.util.List;
+import javax.faces.bean.ManagedBean;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
  *
  * @author gustavo_lourenco
  */
+@ManagedBean
 public class EditoraBean {
 
     private Editora editora;
@@ -63,7 +65,7 @@ public class EditoraBean {
         this.editora = editora;
     }
 
-    public List<Editora> getEditora() {
+    public List<Editora> getEditoras() {
         if (this.editoras == null) {
             EntityManager manager = this.getManager();
             EditoraDAO dao = new EditoraDAOJPA(manager);

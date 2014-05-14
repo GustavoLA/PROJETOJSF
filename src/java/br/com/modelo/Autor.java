@@ -13,6 +13,7 @@ public class Autor {
     @GeneratedValue
     private int codigo;
     private String nome;
+    private String sobrenome;
     @Lob
     private String sobre;
 
@@ -38,5 +39,18 @@ public class Autor {
 
     public void setSobre(String sobre) {
         this.sobre = sobre;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+    @Override
+    public String toString() {
+        return nome + " " + sobrenome;
     }
 }

@@ -6,7 +6,6 @@ package br.com.modelo.persistencia;
 
 import br.com.modelo.Editora;
 import br.com.modelo.persistencia.dao.EditoraDAO;
-import java.io.Serializable;
 import javax.persistence.EntityManager;
 
 /**

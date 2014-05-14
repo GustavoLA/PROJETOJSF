@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 //Funcionario = Livro
 @Entity
@@ -17,6 +18,9 @@ public class Livro {
     private Autor autor;
     @ManyToOne
     private Editora editora;
+
+    public Livro() {
+    }
 
     public int getCodigo() {
         return codigo;

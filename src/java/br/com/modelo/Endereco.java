@@ -1,4 +1,3 @@
-
 package br.com.modelo;
 
 import javax.persistence.Entity;
@@ -7,8 +6,9 @@ import javax.persistence.Id;
 
 @Entity
 public class Endereco {
-    
-    @Id @GeneratedValue
+
+    @Id
+    @GeneratedValue
     private int codigo;
     private String rua;
     private String cidade;
@@ -72,9 +72,4 @@ public class Endereco {
     public void setComplemento(String complemento) {
         this.complemento = complemento;
     }
-    
-    
-    
-    
-    
 }
