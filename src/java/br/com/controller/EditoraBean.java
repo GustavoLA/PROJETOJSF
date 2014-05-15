@@ -57,7 +57,7 @@ public class EditoraBean {
         return (EntityManager) request.getAttribute("EntityManager");
     }
 
-    public Editora getAutor() {
+    public Editora getEditora() {
         return editora;
     }
 

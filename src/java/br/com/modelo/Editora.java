@@ -21,6 +21,10 @@ public class Editora {
     @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
 
+    public Editora() {
+        this.endereco = new Endereco();
+    }
+
     public int getCodigo() {
         return codigo;
     }
