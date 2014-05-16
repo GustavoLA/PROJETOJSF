@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.controller;
 
 import br.com.modelo.Editora;
@@ -14,10 +10,6 @@ import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
 
-/**
- *
- * @author gustavo_lourenco
- */
 @ManagedBean
 public class EditoraBean {
 
@@ -61,11 +53,11 @@ public class EditoraBean {
         return editora;
     }
 
-    public void setEditora(Editora eiditora) {
+    public void setEditora(Editora editora) {
         this.editora = editora;
     }
 
-    public List<Editora> getEditoras() {
+    public List<Editora> getEditoraes() {
         if (this.editoras == null) {
             EntityManager manager = this.getManager();
             EditoraDAO dao = new EditoraDAOJPA(manager);

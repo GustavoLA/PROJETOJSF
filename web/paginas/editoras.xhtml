@@ -6,11 +6,10 @@
     <ui:define name="conteudo">
 
         <h:form>
-            <h:dataTable value="#{editoraBean.editoras}"
-                         var="editora"
-                         styleClass="tabela"
-                         headerClass="cabecalho"
+
+            <h:dataTable value="#{editoraBean.editoraes}" var="editora" styleClass="tabela" headerClass="cabecalho"
                          cellpadding="10">
+
                 <f:facet name="header">
                     <h:outputText value="Editoras"/>
                 </f:facet>
@@ -35,7 +34,6 @@
                     </f:facet>
                     <h:outputText value="#{editora.cnpj}"/>    
                 </h:column>
-
 
                 <h:column>
                     <f:facet name="header">

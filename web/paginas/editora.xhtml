@@ -21,41 +21,57 @@
                     <h:outputLabel for="cnpj" value="CNPJ: "/>
                     <h:inputText id="cnpj" value="#{editoraBean.editora.cnpj}" required="true" 
                                  requiredMessage="O campo CNPJ deve ser preenchido"/>
-                    <h:message for="sobrenome" errorStyle="color:red; display:block"/>
 
+                    <h:message for="cnpj" errorStyle="color:red; display:block"/>
+
+                    <h:outputLabel for="telefone" value="Telefone: "/>
+                    <h:inputText id="telefone" value="#{editoraBean.editora.telefone}" required="true" 
+                                 requiredMessage="O campo Telefone deve ser preenchido"/>
+                    <h:message for="telefone" errorStyle="color:red; display:block"/>
+
+                    <h:outputLabel for="email" value="Email: "/>
+                    <h:inputText id="email" value="#{editoraBean.editora.email}"/>
+                    <h:message for="email"/>
+
+                    <h:outputLabel for="contato" value="Contato Comercial: "/>
+                    <h:inputText id="contato" value="#{editoraBean.editora.contatoComercial}"/>
+                    <h:message for="contato"/>
+
+                    <h:outputLabel for="fax" value="Fax: "/>
+                    <h:inputText id="fax" value="#{editoraBean.editora.fax}"/>
+                    <h:message for="fax"/>
                 </h:panelGrid>
 
-                <hr/>
+                <h/>
 
-                <h:outputText value="Endereço"/>
+                <h:outputText value="Endereco" />
 
-                <h:panelGrid columns="4">                        
-
-                    <h:outputLabel value="Rua: " for="rua"/>
-                    <h:inputText id="rua" value="#{editoraBean.editora.endereco.rua}"/>
-
-                    <h:outputLabel value="Numero: " for="numero"/>                        
-                    <h:panelGroup>                        
+                <h:panelGrid columns="4">
+                    <h:outputLabel value="Rua: " for="rua" />
+                    <h:inputText id="rua" value="#{editoraBean.editora.endereco.rua}" />
+                    <h:outputLabel value="Número " for="numero" />
+                    <h:panelGroup>
                         <h:inputText id="numero" value="#{editoraBean.editora.endereco.numero}" validatorMessage="O número não pode ser negativo.">
-                            <f:validateLongRange minimum="0"/>
-                        </h:inputText>                       
-                        <h:message for="numero"/>
+                            <f:validateLongRange minimum="0" />
+                        </h:inputText>
+                        <h:message for="numero" />
                     </h:panelGroup>
 
-                    <h:outputLabel value="Complemento: " for="complemento"/>
-                    <h:inputText id="complemento" value="#{editoraBean.editora.endereco.complemento}"/>
+                    <h:outputLabel value="Complemento: " for="complemento" />
+                    <h:inputText id="complemento" value="#{editoraBean.editora.endereco.complemento}" />
 
-                    <h:outputLabel value="Estado: " for="estado"/>
-                    <h:inputText id="estado" value="#{editoraBean.editora.endereco.estado}"/>
+                    <h:outputLabel value="Estado: " for="estado" />
+                    <h:inputText id="estado" value="#{editoraBean.editora.endereco.estado}" />
 
-                    <h:outputLabel value="Cidade: " for="cidade"/>
-                    <h:inputText id="cidade" value="#{editoraBean.editora.endereco.cidade}"/>
+                    <h:outputLabel value="Cidade:  " for="cidade" />
+                    <h:inputText id="cidade" value="#{editoraBean.editora.endereco.cidade}" />
 
-                    <h:outputLabel value="Bairro: " for="bairro"/>
-                    <h:inputText id="bairro" value="#{editoraBean.editora.endereco.bairro}"/>  
-
+                    <h:outputLabel value="Bairro: " for="bairro" />
+                    <h:inputText id="bairro" value="#{editoraBean.editora.endereco.bairro}" />
 
                 </h:panelGrid>
+
+
             </fieldset>
 
             <h:panelGroup>
