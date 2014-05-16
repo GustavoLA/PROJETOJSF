@@ -39,7 +39,7 @@ public class CargoBean {
         EntityManager manager = this.getManager();
         CargoDAO dao = new CargoDAOJPA(manager);
         dao.remover(Cargo.class, cargo.getCodigo());
-        this.cargo = null;
+        this.cargos = null;
     }
 
     private EntityManager getManager() {
