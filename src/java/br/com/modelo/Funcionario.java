@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.modelo;
 
 import java.util.Date;
@@ -9,34 +5,30 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-/**
- *
- * @author gustavo_lourenco
- */
 @Entity
-public class Leitor {
+public class Funcionario {
 
     @Id
     @GeneratedValue
     private int codigo;
     private String nome;
-    private int cpf;
-    private String telefone;
-    private String email;
-    private String fax;
+    private String cpf;
     @Temporal(TemporalType.DATE)
     private Date dataNascimento;
-    @Lob
-    private String obs;
-    //@OneToOne(cascade = CascadeType.ALL)
-    //private Endereco endereco;
+    @ManyToOne
+    private Cargo cargo;
+    private String telefone;
+    private String email;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Endereco endereco;
 
-    public Leitor() {
+    public Funcionario() {
+        this.endereco = new Endereco();
     }
 
     public int getCodigo() {
@@ -55,11 +47,11 @@ public class Leitor {
         this.nome = nome;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -71,12 +63,12 @@ public class Leitor {
         this.dataNascimento = dataNascimento;
     }
 
-    public String getObs() {
-        return obs;
+    public Cargo getCargo() {
+        return cargo;
     }
 
-    public void setObs(String obs) {
-        this.obs = obs;
+    public void setCargo(Cargo cargo) {
+        this.cargo = cargo;
     }
 
     public String getTelefone() {
@@ -95,12 +87,11 @@ public class Leitor {
         this.email = email;
     }
 
-    public String getFax() {
-        return fax;
+    public Endereco getEndereco() {
+        return endereco;
     }
 
-    public void setFax(String fax) {
-        this.fax = fax;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
-
 }

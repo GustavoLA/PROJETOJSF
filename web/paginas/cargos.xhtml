@@ -6,52 +6,46 @@
     <ui:define name="conteudo">
 
         <h:form>
-            <h:dataTable value="#{autorBean.autores}"
-                         var="autor"
+
+            <h:dataTable value="#{cargoBean.cargos}"
+                         var="cargo"
                          styleClass="tabela"
                          headerClass="cabecalho"
                          cellpadding="10">
                 <f:facet name="header">
-                    <h:outputText value="Autores"/>
+                    <h:outputText value="Cargos"/>
                 </f:facet>
 
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="Código"/>
                     </f:facet>
-                    <h:outputText value="#{autor.codigo}"/>         
+                    <h:outputText value="#{cargo.codigo}"/>         
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="Nome"/>
                     </f:facet>
-                    <h:outputText value="#{autor.nome}"/>    
+                    <h:outputText value="#{cargo.nome}"/>    
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="Sobre"/>
-                    </f:facet>
-                    <h:outputText value="#{autor.sobre}"/>    
-                </h:column>
-
-                <h:column>
-                    <f:facet name="header">
-                        <h:commandLink action="/faces/paginas/autor.xhtml">
+                        <h:commandLink action="/faces/paginas/cargo.xhtml">
                             <h:graphicImage library="img" name="add.png"/>
                         </h:commandLink>
                     </f:facet>
 
-                    <h:commandLink action="#{autorBean.preparaAlteracao()}">
-                        <f:setPropertyActionListener value="#{autor}"
-                                                     target="#{autorBean.autor}"/>
+                    <h:commandLink action="#{cargoBean.preparaAlteracao}">
+                        <f:setPropertyActionListener value="#{cargo}"
+                                                     target="#{cargoBean.cargo}"/>
                         <h:graphicImage library="img" name="edit.png"/>
                     </h:commandLink>
 
-                    <h:commandLink action="#{autorBean.remove}">
-                        <f:setPropertyActionListener value="#{autor}"
-                                                     target="#{autorBean.autor}"/>
+                    <h:commandLink action="#{cargoBean.remove}">
+                        <f:setPropertyActionListener value="#{cargo}"
+                                                     target="#{cargoBean.cargo}"/>
                         <h:graphicImage library="img" name="delete.png"/>
                     </h:commandLink>
                 </h:column>

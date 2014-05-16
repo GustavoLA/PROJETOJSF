@@ -5,17 +5,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 
-//Cargo = Autor
 @Entity
-public class Autor {
+public class Cargo {
 
     @Id
     @GeneratedValue
     private int codigo;
     private String nome;
-    private String sobrenome;
     @Lob
-    private String sobre;
+    private String descricao;
 
     public int getCodigo() {
         return codigo;
@@ -33,24 +31,12 @@ public class Autor {
         this.nome = nome;
     }
 
-    public String getSobre() {
-        return sobre;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setSobre(String sobre) {
-        this.sobre = sobre;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public String getSobrenome() {
-        return sobrenome;
-    }
-
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
-    }
-
-    @Override
-    public String toString() {
-        return nome + " " + sobrenome;
-    }
 }

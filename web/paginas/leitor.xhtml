@@ -21,63 +21,32 @@
                     <h:outputLabel for="cpf" value="CPF: "/>
                     <h:inputText id="cpf" value="#{leitorBean.leitor.cpf}" required="true" 
                                  requiredMessage="O campo CPF deve ser preenchido"/>
-                    <!--<h:message for="cpf" errorStyle="color:red; display:block"/>-->
-
-
-                    <!--Tenho que ver alguma coisa aqui-->
-                    <h:outputLabel for="dataNascimento" value="Data de Nascimento: "/>
-                    <h:inputText id="dataNascimento" 
-                                     value="#{leitorBean.leitor.dataNascimento}"
-                                     required="true" 
-                                     requiredMessage="O campo Data de Nascimento deve ser preenchido"/>
-                    <!--<h:message for="dataNascimento" errorStyle="color:red; display:block"/>-->
+                    <h:message for="cpf" errorStyle="color:red; display:block"/>
 
                     <h:outputLabel for="telefone" value="Telefone: "/>
                     <h:inputText id="telefone" value="#{leitorBean.leitor.telefone}" required="true" 
                                  requiredMessage="O campo Telefone deve ser preenchido"/>
                     <h:message for="telefone" errorStyle="color:red; display:block"/>
 
+                    <h:outputLabel for="email" value="Email: "/>
+                    <h:inputText id="email" value="#{leitorBean.leitor.email}"/>
+                    <h:message for="email"/>
+
+                    <h:outputLabel for="fax" value="Fax: "/>
+                    <h:inputText id="fax" value="#{leitorBean.leitor.fax}"/>
+                    <h:message for="fax"/>
+
+                    <h:outputLabel for="dataNascimento" value="Data de Nasciemnto"/>
+                    <h:inputText id="contato" value="#{leitorBean.leitor.dataNascimento}"/>
+                    <h:message for="dataNascimento"/>
+
                     <h:outputLabel for="obs" value="Observações: "/>
-                    <h:inputTextarea id="obs" 
-                                     value="#{leitorBean.leitor.obs}"
-                                     cols="50" rows="10" 
-                                     required="true" 
-                                     requiredMessage="O campo Observações deve ser preenchido"/>
-                    <h:message for="obs" errorStyle="color:red; display:block"/>
-                </h:panelGrid>
-
-                <hr/>
-
-                <h:outputText value="Endereço"/>
-
-                <h:panelGrid columns="4">                        
-
-                    <h:outputLabel value="Rua: " for="rua"/>
-                    <h:inputText id="rua" value="#{leitorBean.leitor.endereco.rua}"/>
-
-                    <h:outputLabel value="Numero: " for="numero"/>                        
-                    <h:panelGroup>                        
-                        <h:inputText id="numero" value="#{leitorBean.leitor.endereco.numero}" validatorMessage="O número não pode ser negativo.">
-                            <f:validateLongRange minimum="0"/>
-                        </h:inputText>                       
-                        <h:message for="numero"/>
-                    </h:panelGroup>
-
-                    <h:outputLabel value="Complemento: " for="complemento"/>
-                    <h:inputText id="complemento" value="#{leitorBean.leitor.endereco.complemento}"/>
-
-                    <h:outputLabel value="Estado: " for="estado"/>
-                    <h:inputText id="estado" value="#{leitorBean.leitor.endereco.estado}"/>
-
-                    <h:outputLabel value="Cidade: " for="cidade"/>
-                    <h:inputText id="cidade" value="#{leitorBean.leitor.endereco.cidade}"/>
-
-                    <h:outputLabel value="Bairro: " for="bairro"/>
-                    <h:inputText id="bairro" value="#{leitorBean.leitor.endereco.bairro}"/>  
-
+                    <h:inputTextarea id="obs" value="#{leitorBean.leitor.obs}" cols="50" rows="10"/>
+                    <h:message for="obs"/>
 
                 </h:panelGrid>
 
+           
             </fieldset>
 
             <h:panelGroup>
