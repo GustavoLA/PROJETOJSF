@@ -7,10 +7,7 @@
 
         <h:form>
 
-            <h:dataTable value="#{livroBean.livros}"
-                         var="livro"
-                         styleClass="tabela"
-                         headerClass="cabecalho"
+            <h:dataTable value="#{livroBean.livros}" var="livro" styleClass="tabela" headerClass="cabecalho"
                          cellpadding="10">
                 <f:facet name="header">
                     <h:outputText value="Livros"/>
@@ -25,19 +22,19 @@
 
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="Autor"/>
+                        <h:outputText value="Editora"/>
                     </f:facet>
-                    <h:outputText value="#{livro.autor}"/>    
-                </h:column>
-
-                <f:facet name="header">
-                    <h:commandLink action="/faces/paginas/livro.xhtml">
-                        <h:graphicImage library="img" name="add.png"/>
-                    </h:commandLink>
-                </f:facet>
+                    <h:outputText value="#{livro.editora}"/>    
+                </h:column>                
 
                 <h:column>
-                    <h:commandLink action="#{livroBean.preparaAlteracao}">
+                    <f:facet name="header">
+                        <h:commandLink action="/faces/paginas/livro.xhtml">
+                            <h:graphicImage library="img" name="add.png"/>
+                        </h:commandLink>
+                    </f:facet>
+
+                    <h:commandLink action="#{livroBean.preparaAlteracao()}">
                         <f:setPropertyActionListener value="#{livro}"
                                                      target="#{livroBean.livro}"/>
                         <h:graphicImage library="img" name="edit.png"/>

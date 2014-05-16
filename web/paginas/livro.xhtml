@@ -7,9 +7,10 @@
     <ui:define name="conteudo">
         <h:form>
             <h:inputHidden value="#{livroBean.livro.codigo}"/>
-
             <fieldset>
+
                 <h:panelGrid columns="3">
+
                     <h:outputLabel for="nome" value="Nome: "/>
                     <h:inputText id="nome" value="#{livroBean.livro.nome}"
                                  required="true"
@@ -18,24 +19,25 @@
                     <h:message for="nome" errorStyle="color:red; display:block"/>
 
                     <h:outputLabel for="autor" value="Autor: "/>
-                    <h:selectOneMenu id="autor" 
-                                     value="#{livroBean.autorId}">
-                        <f:selectItems value="#{autorBean.autores}" var="autor"
-                                       itemLabel="#{autor.nome} #{autor.sobrenome}"
-                                       itemValue="#{autor.codigo}"/>
-                    </h:selectOneMenu>         
-                    <h:message for="autor"/>
+                    <h:inputText id="cnpj" value="#{livroBean.livro.autor}" required="true" 
+                                 requiredMessage="O campo Autor deve ser preenchido"/>
+                    <h:message for="cnpj" errorStyle="color:red; display:block"/>
 
-<!--                    <h:outputLabel for="editora" value="Editora: "/>
-                    <h:selectOneMenu id="editora" 
-                                     value="#{livroBean.editoraId}">
-                        <f:selectItems value="#{editoraBean}" var="editora"
-                                       itemLabel="#{editora.nome}"
-                                       itemValue="#{editora.codigo}"/>
-                    </h:selectOneMenu>         
-                    <h:message for="editor"/>-->
+                    <h:outputLabel for="resenha" value="Resenha: "/>
+                    <h:inputTextarea id="resenha" value="#{livroBean.livro.resenha}"/>
+                    <h:message for="resenha"/>
 
-                </h:panelGrid>
+                    <h:outputLabel for="editora" value="Editora: "/>
+                    <h:selectOneMenu id="editora" value="#{livroBean.editoraId}">
+                        <f:selectItems value="#{editoraBean.editoraes}" var="editora" 
+                                       itemLabel="#{editora.nomeFantasia}" 
+                                       itemValue="#{editora.codigo}" />
+                    </h:selectOneMenu>         
+                    <h:message for="editora" />
+
+
+                </h:panelGrid>               
+
             </fieldset>
 
             <h:panelGroup>

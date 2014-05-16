@@ -1,12 +1,9 @@
 package br.com.controller;
 
-import br.com.modelo.Autor;
 import br.com.modelo.Editora;
 import br.com.modelo.Livro;
-import br.com.modelo.persistencia.AutorDAOJPA;
 import br.com.modelo.persistencia.EditoraDAOJPA;
 import br.com.modelo.persistencia.LivroDAOJPA;
-import br.com.modelo.persistencia.dao.AutorDAO;
 import br.com.modelo.persistencia.dao.EditoraDAO;
 import br.com.modelo.persistencia.dao.LivroDAO;
 import java.util.List;
@@ -30,20 +27,12 @@ public class LivroBean {
 
     public String insere() {
         EntityManager manager = this.getManager();
-        AutorDAO autorDao = new AutorDAOJPA(manager);
         EditoraDAO editoraDao = new EditoraDAOJPA(manager);
-        
+
         if (editoraId != 0) {
             Editora editora = editoraDao.buscarPorId(Editora.class, editoraId);
             this.livro.setEditora(editora);
         }
-        
-        if (autorId != 0) {
-            Autor autor = autorDao.buscarPorId(Autor.class, autorId);
-            this.livro.setAutor(autor);
-        }
-
-
 
         LivroDAO dao = new LivroDAOJPA(manager);
         dao.salvar(livro);

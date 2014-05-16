@@ -3,8 +3,8 @@ package br.com.modelo;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 //Funcionario = Livro
 @Entity
@@ -14,12 +14,29 @@ public class Livro {
     @GeneratedValue
     private int codigo;
     private String nome;
-    @ManyToOne
-    private Autor autor;
+    private String autor;
     @ManyToOne
     private Editora editora;
+    @Lob
+    private String resenha;
 
     public Livro() {
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public String getResenha() {
+        return resenha;
+    }
+
+    public void setResenha(String resenha) {
+        this.resenha = resenha;
     }
 
     public int getCodigo() {
@@ -36,14 +53,6 @@ public class Livro {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public Autor getAutor() {
-        return autor;
-    }
-
-    public void setAutor(Autor autor) {
-        this.autor = autor;
     }
 
     public Editora getEditora() {
