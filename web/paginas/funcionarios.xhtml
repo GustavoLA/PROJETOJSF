@@ -7,7 +7,7 @@
 
         <h:form>
 
-            <h:dataTable value="#{funcionarioBean.funcionario}"
+            <h:dataTable value="#{funcionarioBean.funcionarios}"
                          var="funcionario"
                          styleClass="tabela"
                          headerClass="cabecalho"
@@ -18,16 +18,33 @@
 
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="Código"/>
+                        <h:outputText value="Nome"/>
                     </f:facet>
-                    <h:outputText value="#{funcionario.codigo}"/>         
+                    <h:outputText value="#{funcionario.nome}"/>    
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="Nome"/>
+                        <h:outputText value="CPF"/>
                     </f:facet>
-                    <h:outputText value="#{funcionario.nome}"/>    
+                    <h:outputText value="#{funcionario.cpf}"/>    
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Data de Nascimento"/>
+                    </f:facet>
+                    <h:outputText value="#{funcionario.dataNascimento}">
+                        <f:convertDateTime pattern="dd/MM/yyyy"/>
+                    </h:outputText>
+
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Cargo"/>
+                    </f:facet>
+                    <h:outputText value="#{funcionario.cargo}"/>         
                 </h:column>
 
                 <h:column>

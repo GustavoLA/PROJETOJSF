@@ -49,6 +49,7 @@ public class FuncionarioBean {
         EntityManager manager = this.getManager();
         FuncionarioDAO dao = new FuncionarioDAOJPA(manager);
         dao.remover(Funcionario.class, funcionario.getCodigo());
+        this.funcionarios = null;
     }
 
     private EntityManager getManager() {
