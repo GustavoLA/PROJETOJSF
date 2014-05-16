@@ -36,9 +36,11 @@
                     <h:inputText id="fax" value="#{leitorBean.leitor.fax}"/>
                     <h:message for="fax"/>
 
-                    <h:outputLabel for="dataNascimento" value="Data de Nasciemnto"/>
-                    <h:inputText id="contato" value="#{leitorBean.leitor.dataNascimento}"/>
-                    <h:message for="dataNascimento"/>
+                    <h:outputLabel for="dataNascimento" value="Data de nascimento: " />
+                    <h:inputText id="dataNascimento" value="#{leitorBean.leitor.dataNascimento}" required="true" requiredMessage="É necessário informar a data de nascimento." converterMessage="Data de nascimento no formato inválido. Use DD/MM/AAAA">
+                        <f:convertDateTime parent="dd/MM/yyyy" type="date" />
+                    </h:inputText>            
+                    <h:message for="dataNascimento" errorStyle="color:red; display:block" />
 
                     <h:outputLabel for="obs" value="Observações: "/>
                     <h:inputTextarea id="obs" value="#{leitorBean.leitor.obs}" cols="50" rows="10"/>
@@ -46,16 +48,12 @@
 
                 </h:panelGrid>
 
-           
+
             </fieldset>
 
             <h:panelGroup>
-                <h:commandButton value="Limpar"
-                                 type="reset"
-                                 styleClass="botao"/>
-                <h:commandButton value="Salvar"
-                                 action="#{leitorBean.insere}"
-                                 styleClass="botao"/>    
+                <h:commandButton value="Limpar" type="reset" styleClass="botao"/>
+                <h:commandButton value="Salvar" action="#{leitorBean.insere}" styleClass="botao"/>    
             </h:panelGroup>
         </h:form>
     </ui:define>

@@ -11,6 +11,7 @@
                          styleClass="tabela"
                          headerClass="cabecalho"
                          cellpadding="10">
+
                 <f:facet name="header">
                     <h:outputText value="Leitores"/>
                 </f:facet>
@@ -19,21 +20,21 @@
                     <f:facet name="header">
                         <h:outputText value="Código"/>
                     </f:facet>
-                    <h:outputText value="#{leitorBean.leitor.codigo}"/>         
+                    <h:outputText value="#{autor.codigo}"/>         
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="Nome"/>
                     </f:facet>
-                    <h:outputText value="#{leitorBean.leitor.nome}"/>    
+                    <h:outputText value="#{autor.nome}"/>    
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="Telefone"/>
                     </f:facet>
-                    <h:outputText value="#{leitorBean.leitor.telefone}"/>    
+                    <h:outputText value="#{autor.telefone}"/>    
                 </h:column>
 
                 <h:column>
@@ -43,14 +44,14 @@
                         </h:commandLink>
                     </f:facet>
 
-                    <h:commandLink action="#{leitorBean.preparaAlteracao()}">
-                        <f:setPropertyActionListener value="#{leitorBean.leitor}"
+                    <h:commandLink action="#{leitorBean.preparaAlteracao}">
+                        <f:setPropertyActionListener value="#{autor}"
                                                      target="#{leitorBean.leitor}"/>
                         <h:graphicImage library="img" name="edit.png"/>
                     </h:commandLink>
 
                     <h:commandLink action="#{leitorBean.remove}">
-                        <f:setPropertyActionListener value="#{leitorBean.leitor}"
+                        <f:setPropertyActionListener value="#{autor}"
                                                      target="#{leitorBean.leitor}"/>
                         <h:graphicImage library="img" name="delete.png"/>
                     </h:commandLink>

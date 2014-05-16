@@ -46,18 +46,18 @@ public class LeitorBean {
         return "/paginas/leitores.xhtml";
     }
 
-    public void remove() {
-        EntityManager manager = this.getManager();
-        LeitorDAO dao = new LeitorDAOJPA(manager);
-        dao.remover(Leitor.class, leitor.getCodigo());
-        this.leitores = null;
-    }
-
     public String preparaAlteracao() {
         EntityManager manager = this.getManager();
         LeitorDAO dao = new LeitorDAOJPA(manager);
         this.leitor = dao.buscarPorId(Leitor.class, leitor.getCodigo());
         return "/paginas/leitor.xhtml";
+    }
+
+    public void remove() {
+        EntityManager manager = this.getManager();
+        LeitorDAO dao = new LeitorDAOJPA(manager);
+        dao.remover(Leitor.class, leitor.getCodigo());
+        this.leitores = null;
     }
 
     public Leitor getLeitor() {
