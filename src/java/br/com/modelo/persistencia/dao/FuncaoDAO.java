@@ -1,10 +1,10 @@
 
 package br.com.modelo.persistencia.dao;
 
-import br.com.modelo.Cargo;
+import br.com.modelo.Funcao;
 import java.io.Serializable;
 
 
-public interface CargoDAO extends DAO<Cargo,Integer>{
+public interface FuncaoDAO extends DAO<Funcao,Integer>{
     
 }

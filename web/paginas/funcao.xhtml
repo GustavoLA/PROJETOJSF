@@ -5,11 +5,11 @@
 
     <ui:define name="conteudo">
         <h:form>
-            <h:inputHidden value="#{cargoBean.cargo.codigo}"/>
+            <h:inputHidden value="#{funcaoBean.funcao.codigo}"/>
             <fieldset>
                 <h:panelGrid columns="3">
                     <h:outputLabel for="nome" value="Nome: "/>
-                    <h:inputText id="nome" value="#{cargoBean.cargo.nome}"
+                    <h:inputText id="nome" value="#{funcaoBean.funcao.nome}"
                                  required="true"
                                  requiredMessage="O campo nome deve ser 
                                  preenchido"/>
@@ -17,7 +17,7 @@
 
                     <h:outputLabel for="descricao" value="Descrição: "/>
                     <h:inputTextarea id="descricao" 
-                                     value="#{cargoBean.cargo.descricao}"
+                                     value="#{funcaoBean.funcao.descricao}"
                                      cols="50" rows="10"/>
                     <h:message for="descricao" errorStyle="color:red; display:block"/>
 
@@ -29,7 +29,7 @@
                                  type="reset"
                                  styleClass="botao"/>
                 <h:commandButton value="Salvar"
-                                 action="#{cargoBean.insere}"
+                                 action="#{funcaoBean.insere}"
                                  styleClass="botao"/>    
             </h:panelGroup>
         </h:form>

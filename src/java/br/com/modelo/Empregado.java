@@ -11,7 +11,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Funcionario {
+public class Empregado {
 
     @Id
     @GeneratedValue
@@ -21,13 +21,13 @@ public class Funcionario {
     @Temporal(TemporalType.DATE)
     private Date dataNascimento;
     @ManyToOne
-    private Cargo cargo;
+    private Funcao funcao;
     private String telefone;
     private String email;
     @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
 
-    public Funcionario() {
+    public Empregado() {
         this.endereco = new Endereco();
     }
 
@@ -63,12 +63,12 @@ public class Funcionario {
         this.dataNascimento = dataNascimento;
     }
 
-    public Cargo getCargo() {
-        return cargo;
+    public Funcao getFuncao() {
+        return funcao;
     }
 
-    public void setCargo(Cargo cargo) {
-        this.cargo = cargo;
+    public void setFuncao(Funcao funcao) {
+        this.funcao = funcao;
     }
 
     public String getTelefone() {

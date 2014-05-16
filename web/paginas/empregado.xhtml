@@ -6,66 +6,66 @@
 
     <ui:define name="conteudo">
         <h:form>
-            <h:inputHidden value="#{funcionarioBean.funcionario.codigo}"/>
+            <h:inputHidden value="#{empregadoBean.empregado.codigo}"/>
 
             <fieldset>
                 <h:panelGrid columns="3">
-                   
+
                     <h:outputLabel for="nome" value="Nome: "/>
-                    <h:inputText id="nome" value="#{funcionarioBean.funcionario.nome}" required="true" requiredMessage="O campo nome deve ser preenchido" />
+                    <h:inputText id="nome" value="#{empregadoBean.empregado.nome}" required="true" requiredMessage="O campo nome deve ser preenchido" />
                     <h:message for="nome" errorStyle="color:red; display:block" />
-                    
+
                     <h:outputLabel for="cpf" value="CPF: "/>
-                    <h:inputText id="cpf" value="#{funcionarioBean.funcionario.cpf}" required="true" requiredMessage="É necessário informar o CPF." />
+                    <h:inputText id="cpf" value="#{empregadoBean.empregado.cpf}" required="true" requiredMessage="É necessário informar o CPF." />
                     <h:message for="cpf" errorStyle="color:red; display:block" />
-                    
+
                     <h:outputLabel for="dataNascimento" value="Data de nascimento: " />
-                    <h:inputText id="dataNascimento" value="#{funcionarioBean.funcionario.dataNascimento}" required="true" requiredMessage="É necessário informar a data de nascimento." converterMessage="Data de nascimento no formato inválido. Use DD/MM/AAAA">
+                    <h:inputText id="dataNascimento" value="#{empregadoBean.empregado.dataNascimento}" required="true" requiredMessage="É necessário informar a data de nascimento." converterMessage="Data de nascimento no formato inválido. Use DD/MM/AAAA">
                         <f:convertDateTime parent="dd/MM/yyyy" type="date" />
                     </h:inputText>            
                     <h:message for="dataNascimento" errorStyle="color:red; display:block" />
 
-                    <h:outputLabel for="cargo" value="Cargo: "/>
-                    <h:selectOneMenu id="cargo" value="#{funcionarioBean.cargoId}">
-                        <f:selectItems value="#{cargoBean.cargos}" var="cargo" itemLabel="#{cargo.nome}" itemValue="#{cargo.codigo}" />
+                    <h:outputLabel for="funcao" value="Função: "/>
+                    <h:selectOneMenu id="funcao" value="#{empregadoBean.funcaoId}">
+                        <f:selectItems value="#{funcaoBean.funcoes}" var="funcao" itemLabel="#{funcao.nome}" itemValue="#{funcao.codigo}" />
                     </h:selectOneMenu>         
-                    <h:message for="cargo" />
+                    <h:message for="funcao" />
 
                     <h:outputLabel value="Telefone: " for="telefone" />
-                    <h:inputText id="telefone" value="#{funcionarioBean.funcionario.telefone}" />
+                    <h:inputText id="telefone" value="#{empregadoBean.empregado.telefone}" />
                     <h:message for="telefone" />
-                    
+
                     <h:outputLabel value="Email: " for="email" />
-                    <h:inputText id="email" value="#{funcionarioBean.funcionario.email}" />
-                    
+                    <h:inputText id="email" value="#{empregadoBean.empregado.email}" />
+
                     <h:message for="email" />
                 </h:panelGrid>
-                
+
                 <h:outputText value="Endereco" />
-                
+
                 <h:panelGrid columns="4">
                     <h:outputLabel value="Rua: " for="rua" />
-                    <h:inputText id="rua" value="#{funcionarioBean.funcionario.endereco.rua}" />
-                    
+                    <h:inputText id="rua" value="#{empregadoBean.empregado.endereco.rua}" />
+
                     <h:outputLabel value="Número " for="numero" />
                     <h:panelGroup>
-                        <h:inputText id="numero" value="#{funcionarioBean.funcionario.endereco.numero}" validatorMessage="O número não pode ser negativo.">
+                        <h:inputText id="numero" value="#{empregadoBean.empregado.endereco.numero}" validatorMessage="O número não pode ser negativo.">
                             <f:validateLongRange minimum="0" />
                         </h:inputText>
                         <h:message for="numero" />
                     </h:panelGroup>
 
                     <h:outputLabel value="Complemento: " for="complemento" />
-                    <h:inputText id="complemento" value="#{funcionarioBean.funcionario.endereco.complemento}" />
+                    <h:inputText id="complemento" value="#{empregadoBean.empregado.endereco.complemento}" />
 
                     <h:outputLabel value="Estado: " for="estado" />
-                    <h:inputText id="estado" value="#{funcionarioBean.funcionario.endereco.estado}" />
+                    <h:inputText id="estado" value="#{empregadoBean.empregado.endereco.estado}" />
 
                     <h:outputLabel value="Cidade:  " for="cidade" />
-                    <h:inputText id="cidade" value="#{funcionarioBean.funcionario.endereco.cidade}" />
+                    <h:inputText id="cidade" value="#{empregadoBean.empregado.endereco.cidade}" />
 
                     <h:outputLabel value="Bairro: " for="bairro" />
-                    <h:inputText id="bairro" value="#{funcionarioBean.funcionario.endereco.bairro}" />
+                    <h:inputText id="bairro" value="#{empregadoBean.empregado.endereco.bairro}" />
 
                 </h:panelGrid>
 
@@ -73,7 +73,7 @@
 
             <h:panelGroup>
                 <h:commandButton value="Limpar" type="reset" styleClass="botao" />
-                <h:commandButton value="Salvar" action="#{funcionarioBean.insere}" styleClass="botao" />    
+                <h:commandButton value="Salvar" action="#{empregadoBean.insere}" styleClass="botao" />    
             </h:panelGroup>
 
         </h:form>
