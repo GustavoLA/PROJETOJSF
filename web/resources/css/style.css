@@ -1,225 +1,119 @@
-body{
+html, body{
     margin: 0;
     padding: 0;
-    background: #F6F6F6;
-    font-size: 14px;
-    text-align: justify;    
 }
-
-*{
-    font-family: Arial, Helvetica, sans-serif;
-    color: #83826A;
-    font-size: 12px;   
+body{
+    font: 76% arial, sans-serif;
+    text-align: center;
 }
-
-body input{
-    width: 200px;
+#topo{
+    background-color: #f3f2ed;
+    width: 750px;
+    margin: 0 auto;
 }
-
-h1, h2, h3{
-    font-weight: normal;
-    color: #666666;
+#topo h1{
+    height: 80px;
+    line-height: 80px;
+    margin: 0;
+    padding-left: 10px;
 }
-
-h1{
-    letter-spacing: -2px;
-    font-size: 26px;
+#topo p{      
+    margin: 0;
+    padding: 5px 10px;
 }
-
+#rodape{
+    background: #bfbd93;
+    clear: both;
+    width: 750px;
+    margin: 0 auto;   
+}
+#rodape p{
+    margin: 0;
+    padding: 5px 10px;
+}
+#menuLateral{
+    margin-top: 1px;
+    margin-bottom: 1px;
+    background: #f3f2ed;
+    float: left;
+    width: 250px;
+}
+#menuLateral li{
+    margin-bottom: 5px;
+}
+#menuLateral ul{
+    margin: 15px 0;
+    padding: 0;
+    list-style-type: none;
+}
 a{
-    color: #34BA01;
+    padding: 5px;
+    text-decoration: none;
+    color: #000000;
 }
-
 a:hover{
     color: #00cc00;
 }
-
-#topo{
-    width: 920px;
-    height: 100px;
-    margin: 0 auto;
-}
-
-#topo h1{
-    margin:0;
-    font-size:52px;
-    color: #20A001;
-}
-
-#topo p{
-    margin-top: -15px;
-    padding: 0px 0px 0px 4px;
-    font-size: 20px;
-    color: #86EA66;
-    text-transform: lowercase;
-}
-
 #pagina{
-    width: 920px;
+    text-align: left;
+    width: 750px;
     margin: 0 auto;
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px #cccccc;
-    position: relative;
 }
-
 #conteudo{
-    width: 660px;
-    margin: 0;
-    color: #666666;
-    display: inline-block;
-    vertical-align: top;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    float: right;
+    width: 500px; 
 }
-
-#menuLateral{
-    background: #86EA66;
-    width: 200px;
-    color: #FFFFFF;
-    border-radius: 10px 0 0 10px;
-    border: 10px solid #FFFFFF;
-    display: inline-block;
-    vertical-align: top;
+#conteudo p, h1{
+    line-height: 1.4; 
+    margin: 0 10px 10px
 }
-
-#rodape{
-    width: 800px;
-    margin: 0 auto;
-    height: 50px;
+#extra{
+    float: right; 
+    width: 500px;
+    background: #ccc8b3;
     text-align: center;
-    font-size: 11px;
-    color: #86EA66;
-    margin-bottom: 27px;
 }
-
-#menuLateral ul{
-    margin: 10px;
-    padding: 0;
-    list-style: none;   
-}
-
-#menuLateral li{
-    margin: 0;
-    padding: 0;
-}
-
-#menuLateral li ul{
-    margin-bottom: 40px;
-    padding: 0 15px;
-}
-
-#menuLateral li ul li{
-    margin: 0;
-    padding: 0;
-    line-height: 35px;
-    border-bottom: 1px #A3F390 dashed;
-}
-
-#menuLateral h2{
-    width: 180px;
-    height: 32px;
-    padding-left: 10px;
-    background-image: -webkit-gradient(linear,left top,left bottom, color-stop(0, #1D9B01),color-stop(1, #35BA01));
-    background-image: -o-linear-gradient(bottom, #1D9B01 0%, #35BA01 100%);
-    background-image: -moz-linear-gradient(bottom, #1D9B01 0%, #35BA01 100%);
-    background-image: -webkit-linear-gradient(bottom, #1D9B01 0%, #35BA01 100%);
-    background-image: -ms-linear-gradient(bottom, #1D9B01 0%, #35BA01 100%);
-    background-image: linear-gradient(to bottom, #1D9B01 0%, #35BA01 100%);
-    font-size: 18px;
-    color: #FFFFFF;     
-
-}
-
-#menuLateral a{
-    text-decoration: none;
-    color:#FFFFFF;
-    font-weight: bold;
-}
-
-#menuLateral a:hover{
-    text-decoration: none;
-}
-
-.botao{
-    background: #a6d993; /* Old browsers */
-    background: -moz-linear-gradient(top, #a6d993 0%, #4bb129 100%, #a6d993 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a6d993), color-stop(100%,#4bb129), color-stop(100%,#a6d993)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #a6d993 0%,#4bb129 100%,#a6d993 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #a6d993 0%,#4bb129 100%,#a6d993 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #a6d993 0%,#4bb129 100%,#a6d993 100%); /* IE10+ */
-    background: linear-gradient(to bottom, #a6d993 0%,#4bb129 100%,#a6d993 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6d993', endColorstr='#a6d993',GradientType=0 ); /* IE6-9 */
-    color: #ffffff;
-}
-
 .tabela{
     margin: 0px;
     padding: 0px;
     width: 100%;
-    box-shadow: 5px 5px 2px #888888;
-    border:1px solid #3f7f00;
+    border:1px solid;
 }
-
 .tabela table{
-    border-collapse: collapse;
-    border-spacing: 0;
     width: 100%;
     height: 100%;
     margin: 0px;
     padding: 0px;   
 }
-
 .tabela tr:nth-child(odd){
-    background-color:#d4ffaa; 
+    background-color:#f3f2ed; 
 }
-
-.tabela tr:nth-child(even){
-    background-color:#ffffff; 
+.tabela tr:nth-child(even){    
 }
-
 .tabela td{
     vertical-align: middle;
-    border: 1px solid #3f7f00;
-    border-width: 0px 1px 1px 0px;
+    border: 1px solid;
+    border-width: 1px 1px 1px 1px;
     text-align: center;
     padding: 7px;
     font-size: 12px;
-    font-family: Arial;
-    color: #000000;
+    font-family: Arial;    
 }
-
 .tabela tr:last-child td{
-    border-width: 0px 1px 0px 0px;
+    border-width: 1px 1px 1px 1px;
 }
-
 .tabela tr td:last-child{
-    border-width: 0px 0px 1px 0px;
+    border-width: 1px 1px 1px 1px;
 }
-
 .tabela tr:last-child td:last-child{
-    border-width: 0px 0px 0px 0px;
+    border-width: 1px 1px 1px 1px;
 }
-
 .tabela .cabecalho{
-    background:-o-linear-gradient(bottom, #5fbf00 5%, #3f7f00 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5fbf00), color-stop(1, #3f7f00) );
-    background:-moz-linear-gradient( center top, #5fbf00 5%, #3f7f00 100% );
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#5fbf00", endColorstr="#3f7f00");	background: -o-linear-gradient(top,#5fbf00,3f7f00);
-    background-color:#5fbf00;
-    border:0px solid #3f7f00;
+    background-color:#bfbd93;
+    border:0px solid;
     text-align:center;
-    border-width:0px 0px 1px 1px;
+    border-width:1px 1px 1px 1px;
     font-size:14px;
     font-family:Arial;
     font-weight:bold;
-    color:#ffffff;
-
 }
-
-/*#topo{
-    width:90%;
-    max-width: 920px;
-    height: 100px;
-    margin: 0 auto;
-    background: #00c1d0;
-}*/
